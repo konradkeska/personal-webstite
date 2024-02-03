@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+
+import PageLayout from "@/layouts/Base";
+import aboutImg from "@/assets/about-astro.png";
+
+const meta = {
+	title: "About",
+	description: "I'm a starter theme for Astro.build",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class="space-y-6">
+		<h1 class="title">About</h1>
+		<p>
+			When not deep in the dev trenches, you might find me exploring the latest tech trends,
+			<a
+				class="cactus-link inline-block"
+				href="https://www.strava.com/athletes/66342454"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="strava profile">pedaling away on scenic routes</a
+			>, or getting lost in the world of podcasts.
+		</p>
+		<div class="flex justify-center">
+			<Image
+				src={aboutImg}
+				alt="A cartoon cactus looking at the 'Astro.build' logo"
+				loading="eager"
+				fetchpriority="high"
+			/>
+		</div>
+		<p>Some of the things I wrote</p>
+		<ul class="list-inside list-disc">
+			<li>
+				<a
+					class="cactus-link inline-block"
+					href="https://github.com/konradkeska/subliminal-next"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="github repository">subliminal-next theme</a
+				> - VS Code color theme
+			</li>
+			<li>
+				<a
+					class="cactus-link inline-block"
+					href="https://github.com/konradkeska/setup-script"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="github repository">setup-script</a
+				> - UI for creating macOS setup scripts with <a
+					class="cactus-link inline-block"
+					href="https://brew.sh/"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="package manager">brew</a
+				>
+			</li>
+		</ul>
+		<p>Desk setup</p>
+		<ul class="list-inside list-disc">
+			<li>2x DELL u2720q monitor</li>
+			<li>Electric desk with a solid oak top</li>
+			<li>Herman Miller Aeron</li>
+			<li>Apple MacBook Pro 16' M1 32GB RAM</li>
+			<li>Apple AirPods Pro</li>
+			<li>Keychron K6</li>
+			<li>MX Master 3s</li>
+		</ul>
+		<p>Based on by Chris Williams.</p>
+	</div>
+</PageLayout>

@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+
+import PageLayout from "@/layouts/Base";
+import aboutImg from "@/assets/about-astro.png";
+
+const meta = {
+	title: "Uses",
+	description: "What I use on daily basis",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class="space-y-6">
+		<h1 class="title">Uses</h1>
+		<p>
+			When not deep in the dev trenches, you might find me exploring the latest tech trends,
+			<a
+				class="cactus-link inline-block"
+				href="https://www.strava.com/athletes/66342454"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="strava profile">pedaling away on scenic routes</a
+			>, or getting lost in the world of podcasts.
+		</p>
+		<div class="flex justify-center">
+			<Image
+				src={aboutImg}
+				alt="A cartoon cactus looking at the 'Astro.build' logo"
+				loading="eager"
+				fetchpriority="high"
+			/>
+		</div>
+    <p>Desk</p>
+		<ul class="list-inside list-disc">
+			<li>2x DELL u2720q monitor</li>
+			<li>Electric desk with a solid oak top</li>
+			<li>Herman Miller Aeron</li>
+			<li>Apple MacBook Pro 16' M1 32GB RAM</li>
+			<li>Apple AirPods Pro</li>
+			<li>Keychron K6</li>
+			<li>MX Master 3s</li>
+		</ul>
+		<p>Cycling</p>
+		<ul class="list-inside list-disc">
+			<li>Scott Addict RC30</li>
+			<li>Tacx Neo 2T</li>
+		</ul>
+	</div>
+</PageLayout>
