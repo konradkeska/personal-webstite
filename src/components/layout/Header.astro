@@ -16,13 +16,13 @@ const url = new URL(Astro.request.url);
 			aria-current={url.pathname === "/" ? "page" : false}
 		>
 			<Image
-				class="h-12 w-12 rounded-full"
+				class="me-3 h-12 w-12 rounded-full sm:absolute sm:start-[-4.5rem] sm:me-0"
 				src={faceImg}
 				alt="Author face"
 				loading="eager"
 				aria-hidden="true"
 			/>
-			<span class="text-xl font-bold sm:text-2xl">Konrad Keska</span>
+			<span class="text-xl font-bold sm:text-2xl">konrad codes</span>
 		</a>
 		<nav
 			id="navigation-menu"

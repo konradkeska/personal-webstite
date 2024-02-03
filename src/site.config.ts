@@ -1,10 +1,9 @@
 import type { SiteConfig } from "@/types";
-import { ExpressiveCodeTheme, type AstroExpressiveCodeOptions } from "astro-expressive-code";
-import fs from "node:fs";
+import { type AstroExpressiveCodeOptions } from "astro-expressive-code";
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
-	author: "Konrad Keska",
+	author: "Conrad Codes",
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
 	title: "blog",
 	// Meta property used as the default description meta property
@@ -43,13 +42,10 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 	},
 ];
 
-const jsoncString = fs.readFileSync(new URL(`./subliminalnext.jsonc`, import.meta.url), "utf-8");
-const subliminalNextTheme = ExpressiveCodeTheme.fromJSONString(jsoncString);
-
 // https://expressive-code.com/reference/configuration/
 export const expressiveCodeOptions: AstroExpressiveCodeOptions = {
 	// One dark, one light theme => https://expressive-code.com/guides/themes/#available-themes
-	themes: [subliminalNextTheme],
+	themes: ["github-dark", "github-light"],
 	themeCssSelector(theme, { styleVariants }) {
 		// If one dark and one light theme are available
 		// generate theme CSS selectors compatible with cactus-theme dark mode switch

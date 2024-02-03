@@ -1,34 +1,50 @@
 ---
 import PageLayout from "@/layouts/Base";
-import PostPreview from "@/components/blog/PostPreview";
+import Post from "@/components/blog/Post";
 import SocialList from "@/components/SocialList";
 import { getAllPosts, sortMDByDate } from "@/utils";
+import { Image } from "astro:assets";
+import desertImg from "@/assets/desert.jpg";
 
-const MAX_POSTS = 10;
+const MAX_POSTS = 3;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-	<section>
-		<h1 class="title mb-6">Hey there! :wave:</h1>
-		<p class="mb-4">
-			Hi, I’m a theme for Astro, an example of how you can use this starter to create a personal
-			blog. If you want to know more about how you can customise me, add more posts, and make it
-			your own, click on the github icon link below and it will take you to my repo.
-		</p>
-		<SocialList />
-	</section>
-	<section aria-label="Blog post list" class="mt-16">
-		<h2 class="title mb-4 text-xl">Posts</h2>
-		<ul class="space-y-4">
-			{
-				allPostsByDate.map((p) => (
-					<li class="flex flex-col gap-x-2 sm:flex-row">
-						<PostPreview post={p} />
-					</li>
-				))
-			}
-		</ul>
-	</section>
+	<main class="flex flex-col gap-6 sm:flex-row sm:gap-12">
+		<div class="flex flex-1 flex-col gap-4">
+			<h1 class="title mb-6">Hello there 👋</h1>
+			<p>I love creating web applications that brings a smile on your face.</p>
+			<p>
+				Senior Software Engineer at <a
+					class="cactus-link inline-block"
+					href="https://www.rho.co/"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Rho business banking">Rho</a
+				>.
+			</p>
+			<SocialList />
+			<h2 class="subtitle mt-12">Latest posts</h2>
+			<ul class="mb-12 flex flex-col gap-6">
+				{
+					allPostsByDate.map((post) => (
+						<li class="flex flex-col">
+							<Post post={post} />
+						</li>
+					))
+				}
+			</ul>
+		</div>
+		<div class="flex-1">
+			<Image
+				class="rounded-lg"
+				src={desertImg}
+				alt="Photo of Konrad with desert in the background."
+				loading="eager"
+				fetchpriority="high"
+			/>
+		</div>
+	</main>
 </PageLayout>

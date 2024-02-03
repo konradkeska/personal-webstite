@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 
 import PageLayout from "@/layouts/Base";
 import aboutImg from "@/assets/about-astro.png";
+import SocialList from "@/components/SocialList";
 
 const meta = {
 	title: "About",
@@ -31,43 +32,49 @@ const meta = {
 				fetchpriority="high"
 			/>
 		</div>
-		<p>Some of the things I wrote</p>
+		<section>
+			<h1 class="title mb-6">Konrad Keska 🧑‍💻</h1>
+			<p class="mb-4">
+				Konrad is a Software Engineer based in Warsaw 🇵🇱. His main focus is web development which he
+				has been doing since 2018. Currently he tries to use modern technologies to make finance
+				applications more bearable or even enjoyable.
+				<br />
+				<br />
+				Here he shares his experiences and thoughts on modern tech, development and things around that.
+			</p>
+			<SocialList />
+		</section>
+		<h2>Bio</h2>
+
 		<ul class="list-inside list-disc">
 			<li>
-				<a
-					class="cactus-link inline-block"
-					href="https://github.com/konradkeska/subliminal-next"
-					target="_blank"
-					rel="noopener noreferrer"
-					aria-label="github repository">subliminal-next theme</a
-				> - VS Code color theme
+				<time class="mr-3">09.2022 - Present</time>
+				Senior Software Engineer @ Rho (New York, United States)
 			</li>
 			<li>
-				<a
-					class="cactus-link inline-block"
-					href="https://github.com/konradkeska/setup-script"
-					target="_blank"
-					rel="noopener noreferrer"
-					aria-label="github repository">setup-script</a
-				> - UI for creating macOS setup scripts with <a
-					class="cactus-link inline-block"
-					href="https://brew.sh/"
-					target="_blank"
-					rel="noopener noreferrer"
-					aria-label="package manager">brew</a
-				>
+				<time class="mr-3">03.2022 - 09.2022</time>
+				Senior Frontend Developer @ OBOS (Oslo, Norway)
+			</li>
+			<li>
+				<time class="mr-3">08.2021 - 07.2022</time>
+				Senior Frontend Developer @ Fenerum (Aarhus, Denmark)
+			</li>
+			<li>
+				<time class="mr-3">02.2020 - 07.2021</time>
+				Frontend Developer @ Growbots (San Francisco, United States)
+			</li>
+			<li>
+				<time class="mr-3">01.2019 - 02.2020</time>
+				Frontend Developer @ Play (Warsaw, Poland)
+			</li>
+			<li>
+				<time class="mr-3">06.2018 - 01.2019</time>
+				Frontend Developer @ Accenture (Warsaw, Poland)
+			</li>
+			<li>
+				<time class="mr-3">05.2016 - 05.2018</time>
+				Web Developer @ Freelance (Warsaw, Poland)
 			</li>
 		</ul>
-		<p>Desk setup</p>
-		<ul class="list-inside list-disc">
-			<li>2x DELL u2720q monitor</li>
-			<li>Electric desk with a solid oak top</li>
-			<li>Herman Miller Aeron</li>
-			<li>Apple MacBook Pro 16' M1 32GB RAM</li>
-			<li>Apple AirPods Pro</li>
-			<li>Keychron K6</li>
-			<li>MX Master 3s</li>
-		</ul>
-		<p>Based on by Chris Williams.</p>
 	</div>
 </PageLayout>
